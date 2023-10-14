@@ -4,7 +4,7 @@ public class Px7_4 {
 
         myTv.setChannel(10);
         System.out.println("CH:" + myTv.getChannel());
-        myTv.setChannel(20);
+        myTv.setVolume(20);
         System.out.println("VOL:" + myTv.getVolume());
     }
 }
@@ -12,6 +12,8 @@ public class Px7_4 {
 class MyTv {
     private boolean isPowerOn;
     private int channel;
+
+    private int previousChannel;
     private int volume;
 
     private final int MAX_VOLUME = 100;
@@ -32,6 +34,10 @@ class MyTv {
     }
 
     public void setChannel(int channel) {
+        if (channel > MAX_CHANNEL || channel < MIN_CHANNEL) {
+            return;
+        }
+        this.previousChannel = this.channel;
         this.channel = channel;
     }
 
@@ -40,6 +46,13 @@ class MyTv {
     }
 
     public void setVolume(int volume) {
+        if (volume > MAX_VOLUME || volume < MIN_VOLUME) {
+            return;
+        }
         this.volume = volume;
+    }
+
+    public void gotoPrevChannel () {
+        setChannel(this.previousChannel);
     }
 }
