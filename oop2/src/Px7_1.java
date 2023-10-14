@@ -22,6 +22,23 @@ class SutdaDeck {
         }
     }
 
+    public void shuffle() {
+        for (int i = 0; i < cards.length; i++) {
+            int j = (int) (Math.random() * cards.length);
+            SutdaCard tmp = cards[i];
+            cards[i] = cards[j];
+            cards[j] = tmp;
+        }
+    }
+
+    public SutdaCard pick(int index) {
+        return cards[index];
+    }
+
+    public SutdaCard pick() {
+        int randomNumber = (int) Math.random() * cards.length;
+        return cards[randomNumber];
+    }
 }
 
 class SutdaCard {
