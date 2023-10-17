@@ -3,14 +3,14 @@ import java.util.Stack;
 
 public class Ex11_3 {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.out.println("Usage:java Ex11_3 \"EXPRESSION\"");
-            System.out.println("Example:java Ex11_3 \"((2 + 3) * 1) + 3\"");
-            System.exit(0);
-        }
+//        if (args.length != 1) {
+//            System.out.println("Usage:java Ex11_3 \"EXPRESSION\"");
+//            System.out.println("Example:java Ex11_3 \"((2 + 3) * 1) + 3\"");
+//            System.exit(0);
+//        }
 
         Stack stack = new Stack();
-        String expression = args[0];
+        String expression = "((2 + 3) * 1 + 3";
 
         System.out.println("expression = " + expression);
 
