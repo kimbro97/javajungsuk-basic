@@ -17,5 +17,13 @@ public class Ex11_5 {
             Object obj = iterator.next();
             System.out.println(obj);
         }
+        // iterator는 일회용
+        iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            Object obj = iterator.next();
+            System.out.println(obj);
+        }
+
     }
 }
